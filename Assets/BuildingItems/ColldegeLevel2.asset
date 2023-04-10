@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72e8a36fc22f7f42be45b01c28d8405, type: 3}
+  m_Name: ColldegeLevel2
+  m_EditorClassIdentifier: 
+  buildingPrefab: {fileID: -2693272199304555291, guid: 80d1bd35aa8c4a34aa6d2ef65da4a7f9,
+    type: 3}
+  icon: {fileID: 21300000, guid: 6c6bbf345dece3549a5555bce08566b7, type: 3}
+  buildingItemName: "\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u0447\u0430\u0441\u0442\u044C"
+  quality: 1
