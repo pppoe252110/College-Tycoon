@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class BuildingShopItem : MonoBehaviour
 {
     public Text text;
+    public Text price;
     public Image outline;
     public Image icon;
     public Button button;
@@ -16,5 +17,6 @@ public class BuildingShopItem : MonoBehaviour
         //text.text += string.Format("\n{0} Уровень", item.quality + 1);
         icon.sprite = item.icon;
         outline.color = IdentityManager.Instance.identityPreset.qualityColors[item.quality];
+        price.text = SFNuffix.GetFullValue(item.price);
     }
 }

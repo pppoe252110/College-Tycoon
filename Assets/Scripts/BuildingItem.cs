@@ -6,4 +6,5 @@ public class BuildingItem : ScriptableObject
     public Sprite icon;
     public string buildingItemName;
     public int quality = 1;
+    public float price = 1000;
 }

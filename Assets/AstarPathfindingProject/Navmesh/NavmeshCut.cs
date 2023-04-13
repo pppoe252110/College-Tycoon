@@ -238,16 +238,17 @@ namespace Pathfinding {
 		protected override void Awake () {
 			base.Awake();
 			tr = transform;
-		}
+        }
 
-		protected override void OnEnable () {
+        protected override void OnEnable () {
 			base.OnEnable();
 			lastPosition = new Vector3(float.PositiveInfinity, float.PositiveInfinity, float.PositiveInfinity);
 			lastRotation = tr.rotation;
-		}
+            ForceUpdate();
+        }
 
-		/// <summary>Cached variable, to avoid allocations</summary>
-		static readonly Dictionary<Int2, int> edges = new Dictionary<Int2, int>();
+        /// <summary>Cached variable, to avoid allocations</summary>
+        static readonly Dictionary<Int2, int> edges = new Dictionary<Int2, int>();
 		/// <summary>Cached variable, to avoid allocations</summary>
 		static readonly Dictionary<int, int> pointers = new Dictionary<int, int>();
 

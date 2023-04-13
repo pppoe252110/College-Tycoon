@@ -172,11 +172,11 @@ MonoBehaviour:
   rectangleSize: {x: 11.4, y: 11.81464}
   circleRadius: 1
   circleResolution: 6
-  height: 16.39564
+  height: 10
   meshScale: 1
-  center: {x: 0.0000004768372, y: 8.197819, z: -0.09267807}
+  center: {x: 0.0000004768372, y: 0, z: -0.09267807}
   updateDistance: 0.4
   isDual: 0
   cutsAddedGeom: 1
   updateRotationDistance: 10
-  useRotationAndScale: 0
+  useRotationAndScale: 1

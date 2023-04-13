@@ -23,7 +23,7 @@ public class Builder : MonoBehaviour
     void Update()
     {
 
-        rot += Mathf.Sign(Input.mouseScrollDelta.y) * 45f * (rot != 0 ? 1 : 0);
+        rot += Input.GetKeyDown(KeyCode.R) ? 45 : 0;
         if (targetBuilding)
         {
             var a = Camera.allCameras[0].ScreenPointToRay(Input.mousePosition);
@@ -51,9 +51,17 @@ public class Builder : MonoBehaviour
                     {
                         if (!builder.grid[point])
                         {
-                            var b = Instantiate(targetBuilding.buildingPrefab, targetPos, Quaternion.Euler(0, rot, 0));
-                            b.transform.DOPunchScale(Vector3.one * 0.2f, 0.25f, 0).SetEase(Ease.InBack);
-                            builder.grid[point] = b;
+                            if (IdentityManager.Instance.CanAfford(targetBuilding.price))
+                            {
+                                IdentityManager.Instance.money -= targetBuilding.price;
+                                var b = Instantiate(targetBuilding.buildingPrefab, targetPos, Quaternion.Euler(0, rot, 0));
+                                b.transform.DOPunchScale(Vector3.one * 0.2f, 0.25f, 0).SetEase(Ease.InBack);
+                                builder.grid[point] = b;
+                            }
+                            else
+                            {
+                                fakeBuilding.transform.DOPunchScale(Vector3.one * 0.2f, 0.25f, 0).SetEase(Ease.InBack);
+                            }
                         }
                     }
                 }

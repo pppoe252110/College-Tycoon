@@ -18,8 +18,7 @@ public class PersonController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         ai.destination = target.position;
         animator.SetFloat(speedHash, ai.velocity.magnitude / ai.maxSpeed);
