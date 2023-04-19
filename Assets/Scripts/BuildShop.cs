@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class BuildShop : MonoBehaviour
@@ -8,13 +8,24 @@ public class BuildShop : MonoBehaviour
     public BuildingShopItem shopItemPrefab;
     public BuildingItem[] buildingItems;
     private Builder builder;
+    public static BuildShop Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
-        builder=GetComponent<Builder>();
+        builder = GetComponent<Builder>();
         shop.SetActive(false);
         GenerateBuildingsInShop();
         builder.SetBuilding(null);
+    }
+
+    public void SwitchDestroyMode()
+    {
+        builder.SwitchDestroyMode();
     }
 
     public void GenerateBuildingsInShop()
@@ -31,7 +42,8 @@ public class BuildShop : MonoBehaviour
     public void ShowShop()
     {
         shop.SetActive(!shop.activeSelf);
-        if(!shop.activeSelf)
+        if (!shop.activeSelf)
             builder.SetBuilding(null);
+        builder.destroyMode = false;
     }
 }

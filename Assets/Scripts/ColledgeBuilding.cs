@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class ColledgeBuilding : Building
 {
     void Start()
@@ -12,6 +8,6 @@ public class ColledgeBuilding : Building
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

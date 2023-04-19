@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Pathfinding;
 
 public class IdentityManager : MonoBehaviour
 {
@@ -23,7 +20,7 @@ public class IdentityManager : MonoBehaviour
 
     public void Update()
     {
-        
-        moneyText.text = SFNuffix.GetFullValue(money);
+
+        moneyText.text = SFNuffix.GetFullValue(money, 1);
     }
 }

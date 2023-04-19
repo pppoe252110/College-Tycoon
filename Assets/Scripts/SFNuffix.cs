@@ -9,7 +9,7 @@ public static class SFNuffix
         suffixHandler = Resources.Load<NumbersSuffixHandler>("Numbers");
     }
 
-    public static string GetFullValue(double value)
+    public static string GetFullValue(double value, int n = 0)
     {
         for (int i = 0; i < suffixHandler.numberSuffixes.Length; i++)
         {
@@ -18,9 +18,9 @@ public static class SFNuffix
             {
                 if (i - 1 < 0)
                     break;
-                double powResult = Math.Pow(10, suffixHandler.numberSuffixes[i-1].PowerOfTen);
-                string val = (Math.Floor(value) / powResult).ToString().Split(",")[0];
-                return val + suffixHandler.numberSuffixes[i - 1].SuffixAbbreviation;
+                double powResult = Math.Pow(10, suffixHandler.numberSuffixes[i - 1].PowerOfTen);
+                double v = value / powResult;
+                return string.Format("{0:F"+n+"}", v) + suffixHandler.numberSuffixes[i - 1].SuffixAbbreviation;
             }
         }
         return Math.Floor(value).ToString();

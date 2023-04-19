@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,6 +8,13 @@ public class GridBuilder : MonoBehaviour
     public float cellSize = 8;
     [SerializeField]
     public Dictionary<Vector2, Building> grid;
+
+    public static GridBuilder Instance { get; set; }
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     void Start()
     {
@@ -34,7 +40,7 @@ public class GridBuilder : MonoBehaviour
         var buildings = grid.Values.Where(b => b is T).Cast<T>().ToList();
         return buildings;
     }
-    
+
     public List<DormitoryBuilding> GetAllDormitoryBuilldings()
     {
         var result = grid.Values.OfType<DormitoryBuilding>().ToList();

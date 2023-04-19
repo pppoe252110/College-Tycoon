@@ -1,8 +1,5 @@
 using Pathfinding;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
 
 public class PersonController : MonoBehaviour
 {
@@ -13,8 +10,8 @@ public class PersonController : MonoBehaviour
 
     void Start()
     {
-        ai = GetComponent<AIPath>();        
-        animator = GetComponentInChildren<Animator>();        
+        ai = GetComponent<AIPath>();
+        animator = GetComponentInChildren<Animator>();
 
     }
 

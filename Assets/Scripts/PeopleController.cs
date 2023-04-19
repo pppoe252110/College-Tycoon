@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,8 +11,8 @@ public class PeopleController : MonoBehaviour
     public float currentComfort = 0;
     public Slider currentEducationQualitySlider;
     public float currentEducationQuality = 0;
-    public int currentPopulation; 
-    public int maxPopulation; 
+    public int currentPopulation;
+    public int maxPopulation;
 
     private void Update()
     {
