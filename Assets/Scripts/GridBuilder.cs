@@ -35,6 +35,26 @@ public class GridBuilder : MonoBehaviour
 
     }
 
+    public T GetRandomBuildingTypeOf<T>() where T : Building
+    {
+        var buildings = GetAllBuildingsOfType<T>();
+        if (buildings.Count<=0)
+            return null;
+        var b  =  buildings[Random.Range(0, buildings.Count)];
+        return b;
+    }
+
+    public int GetFreeDormitoryPlaces()
+    {
+        int result = 0;
+        var free = GetAllBuildingsOfType<DormitoryBuilding>();
+        for (int i = 0; i < free.Count; i++)
+        {
+            result += free[i].maxPeople;
+        }
+        return result;
+    }
+
     public List<T> GetAllBuildingsOfType<T>() where T : Building
     {
         var buildings = grid.Values.Where(b => b is T).Cast<T>().ToList();

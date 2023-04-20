@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5effe27d5fd7437488e34b393b228256, type: 3}
+  m_Name: TimePreset
+  m_EditorClassIdentifier: 
+  periods:
+  - startTime: 8:30
+    endTime: 10:00
+    action: 1
+  - startTime: 10:15
+    endTime: 11:45
+    action: 1
+  - startTime: 12:15
+    endTime: 13:45
+    action: 1
+  - startTime: 14:00
+    endTime: 15:30
+    action: 1
+  - startTime: 15:40
+    endTime: 17:10
+    action: 1
+  - startTime: 17:20
+    endTime: 18:50
+    action: 1
+  - startTime: 19:00
+    endTime: 20:30
+    action: 1
+  - startTime: 21:00
+    endTime: 0:00
+    action: 0
+  - startTime: 0:00
+    endTime: 7:00
+    action: 0

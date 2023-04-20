@@ -36,6 +36,6 @@ public class CameraController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        cam.transform.DOShakeRotation(Mathf.Sqrt(v) / 2f, v / 2, Mathf.FloorToInt(Mathf.Sqrt(v)) + 5).onComplete = () => { cam.transform.rotation = startRot; };
+        cam.transform.DOShakeRotation(Mathf.Sqrt(v) / 2f, v / 2, Mathf.FloorToInt(Mathf.Sqrt(v)) + 5).OnComplete(() => { cam.transform.rotation = startRot; });
     }
 }
