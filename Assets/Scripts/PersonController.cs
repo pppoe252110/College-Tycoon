@@ -8,6 +8,11 @@ public class PersonController : MonoBehaviour
     private int speedHash = Animator.StringToHash("Speed");
     private Building destination;
 
+    private void OnEnable()
+    {
+        IdentityManager.Instance.money += 10;
+    }
+
     public void Init()
     {
         SelectRandomSkin();

@@ -25,7 +25,7 @@ public class CameraController : MonoBehaviour
         float speed = Input.GetKey(KeyCode.LeftShift) ? boostSpeed : moveSpeed;
         Vector3 input = Vector3.ClampMagnitude(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("UpDown"), Input.GetAxis("Vertical")), 1f);
         v = speed * input.magnitude;
-        rb.velocity = speed * transform.TransformDirection(input) * Mathf.Sqrt(Mathf.Abs(transform.position.y));
+        rb.velocity = (speed * transform.TransformDirection(input) * Mathf.Sqrt(Mathf.Abs(transform.position.y))) / (Time.timeScale==0?1:Time.timeScale);
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -maxDistance.x, maxDistance.x), Mathf.Clamp(transform.position.y, minHeight, maxHeight), Mathf.Clamp(transform.position.z, -maxDistance.y, maxDistance.y));
     }
 
