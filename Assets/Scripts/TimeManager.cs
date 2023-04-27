@@ -9,6 +9,7 @@ public class TimeManager : MonoBehaviour
 {
     public TimePreset preset;
     public Text timer;
+    public Text actionText;
     public float timeBoost = 60;
     private float time = 43200f;
     public static TimeManager Instance;
@@ -35,6 +36,18 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
+        switch (GetCurrentAction())
+        {
+            case PeriodAction.Sleep:
+                actionText.text = "Сон";
+                break;
+            case PeriodAction.Study:
+                actionText.text = "Учеба";
+                break;
+            case PeriodAction.FreeTime:
+                actionText.text = "Свободное время";
+                break;
+        }
         time = Mathf.Repeat(time + Time.deltaTime * timeBoost, 86400f);
         TimeSpan timeSpan = TimeSpan.FromSeconds(time);
         timer.text = timeSpan.ToString(@"hh\:mm");

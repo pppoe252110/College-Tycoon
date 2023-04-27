@@ -44,8 +44,7 @@ public class TasksManager : MonoBehaviour
         Debug.Log(message);
         var taskObj = Instantiate(taskPrefab, tasksContent);
         taskObj.GetComponentInChildren<Text>().text = message;
-        var task = new TaskItem(message, taskObj);
-        return task;
+        return new TaskItem(message, taskObj);
     }
 
     
