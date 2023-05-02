@@ -12,7 +12,6 @@ public class PersonController : MonoBehaviour
     {
         SelectRandomSkin();
         ai = GetComponent<AIPath>();
-        ai.isStopped = true;
         animator = GetComponentInChildren<Animator>();
         PeopleController.Instance.people.Add(this);
     }
@@ -24,6 +23,7 @@ public class PersonController : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(ai.reachedDestination);
         UpdateDestination();
     }
 
@@ -35,7 +35,7 @@ public class PersonController : MonoBehaviour
             destination = null;
             gameObject.SetActive(false);
         }
-        if (ai.reachedDestination || (destination == null && ai.reachedDestination)||(destination==null && TimeManager.Instance.GetCurrentAction() != PeriodAction.FreeTime))
+        if (ai.reachedDestination || (!destination && ai.reachedDestination)||(!destination && TimeManager.Instance.GetCurrentAction() != PeriodAction.FreeTime))
         {
             switch (TimeManager.Instance.GetCurrentAction())
             {
@@ -43,10 +43,10 @@ public class PersonController : MonoBehaviour
                     var d = GridBuilder.Instance.GetRandomBuildingTypeOf<DormitoryBuilding>();
                     if (d)
                     {
-                        ai.destination = GridBuilder.Instance.GetRandomBuildingTypeOf<DormitoryBuilding>().enterence.position;
+                        ai.destination = d.enterence.position;
                         destination = d;
                     }
-                    else
+                    else if (ai.reachedDestination)
                     {
                         ai.destination = new Vector3(Random.Range(-140f, 140f), 0, Random.Range(-140f, 140f));
                         destination = null;
@@ -56,28 +56,29 @@ public class PersonController : MonoBehaviour
                     var c = GridBuilder.Instance.GetRandomBuildingTypeOf<ColledgeBuilding>();
                     if (c)
                     {
-                        ai.destination = GridBuilder.Instance.GetRandomBuildingTypeOf<ColledgeBuilding>().enterence.position;
+                        ai.destination = c.enterence.position;
                         destination = c;
                     }
-                    else
+                    else if (ai.reachedDestination)
                     {
                         ai.destination = new Vector3(Random.Range(-140f, 140f), 0, Random.Range(-140f, 140f));
                         destination = null;
                     }
                     break;
                 case PeriodAction.FreeTime:
-                    ai.destination = new Vector3(Random.Range(-140f, 140f), 0, Random.Range(-140f, 140f));
-                    destination = null;
+                    if (ai.reachedDestination)
+                    {
+                        ai.destination = new Vector3(Random.Range(-140f, 140f), 0, Random.Range(-140f, 140f));
+                        destination = null;
+                    }
                     break;
             }
         }
-        else if (ai.isStopped || ai.reachedDestination)
+        else if (ai.reachedDestination && !destination)
         {
             ai.destination = new Vector3(Random.Range(-100f, 100f), 0, Random.Range(-100f, 100f));
-            destination = null;
         }
 
-        ai.isStopped = false;
         animator.SetFloat(speedHash, ai.velocity.magnitude / ai.maxSpeed);
     }
 }

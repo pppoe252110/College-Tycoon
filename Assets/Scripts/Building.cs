@@ -17,6 +17,7 @@ public class Building : MonoBehaviour
     public virtual void ReleasePeople()
     {
         people.ForEach(a => a.gameObject.SetActive(true));
+        people = new List<PersonController>();
     }
 
     public virtual void Update()
