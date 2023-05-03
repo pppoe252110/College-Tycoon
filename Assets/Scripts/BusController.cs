@@ -21,6 +21,8 @@ public class BusController : MonoBehaviour
 
     public void ReleasePeople()
     {
+        if (GridBuilder.Instance.GetFreeDormitoryPlaces() < PeopleController.Instance.people.Count)
+            return;
         int count = GridBuilder.Instance.GetFreeDormitoryPlaces()-PeopleController.Instance.people.Count;
         for (int i = 0; i < count; i++)
         {

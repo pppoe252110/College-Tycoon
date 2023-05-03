@@ -8,11 +8,8 @@ public class PeopleController : MonoBehaviour
     public GameObject[] skins;
     public List<PersonController> people = new List<PersonController>();
 
+    public Transform exitPoint;
     public Text population;
-    public Slider currentComfortSlider;
-    public float currentComfort = 0;
-    public Slider currentEducationQualitySlider;
-    public float currentEducationQuality = 0;
 
     public static PeopleController Instance;
 
@@ -23,8 +20,6 @@ public class PeopleController : MonoBehaviour
 
     private void Update()
     {
-        currentComfortSlider.value = currentComfort;
-        currentEducationQualitySlider.value = currentEducationQuality;
         population.text = people.Count + "/" + GridBuilder.Instance.GetFreeDormitoryPlaces();
     }
 }

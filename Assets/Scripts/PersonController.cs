@@ -29,6 +29,17 @@ public class PersonController : MonoBehaviour
 
     public void UpdateDestination()
     {
+        if (IdentityManager.Instance.mood <= 0)
+        {
+            destination = null;
+            ai.destination = PeopleController.Instance.exitPoint.position;
+            if (ai.reachedDestination)
+            {
+                PeopleController.Instance.people.Remove(this);
+                Destroy(gameObject);
+            }
+            return;
+        }
         if (ai.reachedDestination && destination)
         {
             destination.people.Add(this);
