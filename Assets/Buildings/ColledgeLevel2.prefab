@@ -154,7 +154,7 @@ MonoBehaviour:
   enterence: {fileID: 7629463025888215141}
   buildingItem: {fileID: 0}
   people: []
-  maxPeople: 5
+  maxPeople: 10
   priceMultiplier: 2
 --- !u!114 &-6253684161956299282
 MonoBehaviour:

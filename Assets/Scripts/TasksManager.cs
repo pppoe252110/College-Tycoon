@@ -19,7 +19,7 @@ public class TasksManager : MonoBehaviour
 
     private void Update()
     {
-        int freeSpace = GridBuilder.Instance.GetFreeDormitoryPlaces();
+        int freeSpace = GridBuilder.Instance.GetFreeBuildingSpace<DormitoryBuilding>();
 
         CheckTask(freeSpace < PeopleController.Instance.people.Count || freeSpace == 0, "Студентам негде жить", ref notEnoughSpace);
         CheckTask(GridBuilder.Instance.GetAllBuildingsOfType<DormitoryBuilding>().Count <= 0, "Постройте общежитие", ref noDormitry);
@@ -41,7 +41,6 @@ public class TasksManager : MonoBehaviour
 
     public TaskItem GenerateTask(string message)
     {
-        Debug.Log(message);
         var taskObj = Instantiate(taskPrefab, tasksContent);
         taskObj.GetComponentInChildren<Text>().text = message;
         return new TaskItem(message, taskObj);

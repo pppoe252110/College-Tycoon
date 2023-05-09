@@ -23,13 +23,12 @@ public class PersonController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(ai.reachedDestination);
         UpdateDestination();
     }
 
     public void UpdateDestination()
     {
-        if (IdentityManager.Instance.mood <= 0)
+        if (IdentityManager.Instance.mood <= 0.01f)
         {
             destination = null;
             ai.destination = PeopleController.Instance.exitPoint.position;

@@ -21,9 +21,9 @@ public class BusController : MonoBehaviour
 
     public void ReleasePeople()
     {
-        if (GridBuilder.Instance.GetFreeDormitoryPlaces() < PeopleController.Instance.people.Count)
+        if (GridBuilder.Instance.GetFreeBuildingSpace<DormitoryBuilding>() < PeopleController.Instance.people.Count|| IdentityManager.Instance.mood<=0.01f)
             return;
-        int count = GridBuilder.Instance.GetFreeDormitoryPlaces()-PeopleController.Instance.people.Count;
+        int count = GridBuilder.Instance.GetFreeBuildingSpace<DormitoryBuilding>() - PeopleController.Instance.people.Count;
         for (int i = 0; i < count; i++)
         {
             var person = Instantiate(PeopleController.Instance.personPrefab, exit.transform.position + new Vector3(Random.Range(-1f, 1f), 0, Random.Range(-1f, 1f)), Quaternion.Euler(0, 90f, 0));

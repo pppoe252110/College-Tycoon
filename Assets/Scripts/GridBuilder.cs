@@ -44,10 +44,10 @@ public class GridBuilder : MonoBehaviour
         return b;
     }
 
-    public int GetFreeDormitoryPlaces()
+    public int GetFreeBuildingSpace<T>() where T: Building
     {
         int result = 0;
-        var free = GetAllBuildingsOfType<DormitoryBuilding>();
+        var free = GetAllBuildingsOfType<T>();
         for (int i = 0; i < free.Count; i++)
         {
             result += free[i].maxPeople;

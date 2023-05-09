@@ -10,6 +10,7 @@ public class PeopleController : MonoBehaviour
 
     public Transform exitPoint;
     public Text population;
+    public Text education;
 
     public static PeopleController Instance;
 
@@ -20,6 +21,7 @@ public class PeopleController : MonoBehaviour
 
     private void Update()
     {
-        population.text = people.Count + "/" + GridBuilder.Instance.GetFreeDormitoryPlaces();
+        population.text = people.Count + "/" + GridBuilder.Instance.GetFreeBuildingSpace<DormitoryBuilding>();
+        education.text = people.Count + "/" + GridBuilder.Instance.GetFreeBuildingSpace<ColledgeBuilding>();
     }
 }
