@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2878316294316965702}
   - component: {fileID: 4513087600389492810}
   - component: {fileID: 8549964754967425477}
-  - component: {fileID: 5003004327525571278}
   - component: {fileID: 5785198951584242459}
   - component: {fileID: 7836253607578069509}
+  - component: {fileID: 5003004327525571278}
   m_Layer: 0
   m_Name: DormitoryLevel1
   m_TagString: Untagged
@@ -87,22 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &5003004327525571278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3086130260528479835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b9f5304a00da3d48b91912271a6fb09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enterence: {fileID: 2259241113378677549}
-  buildingItem: {fileID: 0}
-  people: []
-  maxPeople: 5
 --- !u!65 &5785198951584242459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -152,6 +136,22 @@ MonoBehaviour:
   cutsAddedGeom: 1
   updateRotationDistance: 10
   useRotationAndScale: 1
+--- !u!114 &5003004327525571278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3086130260528479835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b9f5304a00da3d48b91912271a6fb09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterence: {fileID: 2259241113378677549}
+  buildingItem: {fileID: 0}
+  people: []
+  maxPeople: 5
 --- !u!1 &4823704047270037921
 GameObject:
   m_ObjectHideFlags: 0

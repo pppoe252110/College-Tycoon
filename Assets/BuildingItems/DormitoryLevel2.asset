@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c72e8a36fc22f7f42be45b01c28d8405, type: 3}
+  m_Name: DormitoryLevel2
+  m_EditorClassIdentifier: 
+  buildingPrefab: {fileID: 7841206133488412158, guid: 4335f28b9b18a8b469df31990d8d0211,
+    type: 3}
+  icon: {fileID: 21300000, guid: deaed4032ae8d6a4bbcda46a29cf7b7e, type: 3}
+  buildingItemName: "\u041E\u0431\u0449\u0435\u0436\u0438\u0442\u0438\u0435"
+  quality: 1
+  price: 3000

@@ -257,6 +257,18 @@ namespace Pathfinding
             ForceUpdate();
         }
 
+        void Reset()
+        {
+            if(TryGetComponent(out MeshFilter mf))
+            {
+                var b = mf.sharedMesh.bounds;
+                rectangleSize = new Vector2(b.size.x, b.size.z);
+                height = 10;
+                center = b.center;
+                center.y = 0;
+            }
+        }
+
         /// <summary>Cached variable, to avoid allocations</summary>
         static readonly Dictionary<Int2, int> edges = new Dictionary<Int2, int>();
         /// <summary>Cached variable, to avoid allocations</summary>

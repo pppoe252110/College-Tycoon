@@ -42,6 +42,10 @@ public class IdentityManager : MonoBehaviour
 
     public void Update()
     {
+        if (Input.GetKeyUp(KeyCode.M))
+        {
+            money += 1000;
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);

@@ -23,10 +23,10 @@ public class CameraController : MonoBehaviour
     void Update()
     {
         float speed = Input.GetKey(KeyCode.LeftShift) ? boostSpeed : moveSpeed;
-        Vector3 input = Vector3.ClampMagnitude(new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("UpDown"), Input.GetAxis("Vertical")), 1f);
+        Vector3 input = Vector3.ClampMagnitude(new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("UpDown"), Input.GetAxisRaw("Vertical")), 1f);
         v = speed * input.magnitude;
-        rb.velocity = (speed * transform.TransformDirection(input) * Mathf.Sqrt(Mathf.Abs(transform.position.y))) / (Time.timeScale==0?1:Time.timeScale);
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -maxDistance.x, maxDistance.x), Mathf.Clamp(transform.position.y, minHeight, maxHeight), Mathf.Clamp(transform.position.z, -maxDistance.y, maxDistance.y));
+        rb.velocity = speed * transform.TransformDirection(input) * Mathf.Sqrt(Mathf.Abs(transform.position.y));
+        rb.position = new Vector3(Mathf.Clamp(rb.position.x, -maxDistance.x, maxDistance.x), Mathf.Clamp(rb.position.y, minHeight, maxHeight), Mathf.Clamp(rb.position.z, -maxDistance.y, maxDistance.y));  
     }
 
     private void OnDrawGizmos()
@@ -36,6 +36,6 @@ public class CameraController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        cam.transform.DOShakeRotation(Mathf.Sqrt(v) / 2f, v / 2, Mathf.FloorToInt(Mathf.Sqrt(v)) + 5).OnComplete(() => { cam.transform.rotation = startRot; });
+        cam.transform.DOShakeRotation(Mathf.Sqrt(v) / 2f, v / 2, Mathf.FloorToInt(Mathf.Sqrt(v)) + 5).SetUpdate(true).OnComplete(() => { cam.transform.rotation = startRot; });
     }
 }

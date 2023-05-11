@@ -17,3 +17,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 6c6bbf345dece3549a5555bce08566b7, type: 3}
   buildingItemName: "\u0423\u0447\u0435\u0431\u043D\u0430\u044F \u0447\u0430\u0441\u0442\u044C"
   quality: 1
+  price: 3000

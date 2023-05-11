@@ -13,7 +13,7 @@ public class Builder : MonoBehaviour
     private MeshRenderer fakeBuildingRenderer;
     public LayerMask floorLevel = Physics.AllLayers;
     public LayerMask fakeBuildingLayer = 1 << 6;
-    private float rot = 0;
+    private float rot = 180;
     public ParticleSystem destroyParticles;
     public bool destroyMode = false;
     public MeshRenderer hoveredBuiling;
@@ -119,12 +119,12 @@ public class Builder : MonoBehaviour
                                 IdentityManager.Instance.money -= targetBuilding.price;
                                 var b = Instantiate(targetBuilding.buildingPrefab, targetPos, Quaternion.Euler(0, rot, 0));
                                 b.buildingItem = targetBuilding;
-                                b.transform.DOPunchScale(Vector3.one * 0.2f, 0.25f, 0).SetEase(Ease.InBack);
+                                b.transform.DOPunchScale(Vector3.one * 0.2f, 0.25f, 0).SetEase(Ease.InBack).SetUpdate(true);
                                 builder.grid[point] = b;
                             }
                             else
                             {
-                                fakeBuilding.transform.DOPunchScale(Vector3.one * 0.2f, 0.25f, 0).SetEase(Ease.InBack).OnComplete(() => { fakeBuilding.transform.localScale = Vector3.one; });
+                                fakeBuilding.transform.DOPunchScale(Vector3.one * 0.2f, 0.25f, 0).SetUpdate(true).SetEase(Ease.InBack).OnComplete(() => { fakeBuilding.transform.localScale = Vector3.one; });
                             }
                         }
                     }

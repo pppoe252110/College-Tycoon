@@ -16,7 +16,8 @@ public class Building : MonoBehaviour
 
     public virtual void ReleasePeople()
     {
-        people.ForEach(a => a.gameObject.SetActive(true));
+        if(people != null && people.Count>0)
+            people.ForEach(a => a.gameObject.SetActive(true));
         people.Clear();
     }
 

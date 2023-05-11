@@ -43,8 +43,8 @@ GameObject:
   - component: {fileID: 50941032486461895}
   - component: {fileID: 8586582757163493187}
   - component: {fileID: 5533414330271185245}
-  - component: {fileID: -4912378688970607453}
   - component: {fileID: -2658238853064460551}
+  - component: {fileID: -4912378688970607453}
   m_Layer: 0
   m_Name: ColledgeLevel1
   m_TagString: Untagged
@@ -139,19 +139,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 11.400001, y: 16.395638, z: 11.814644}
   m_Center: {x: 0.00000047683716, y: 8.197819, z: -0.09267807}
---- !u!114 &-4912378688970607453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146528840845912335}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38bffeba856a428418f2ed15453b441a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enterence: {fileID: 3816679460954026575}
 --- !u!114 &-2658238853064460551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,3 +167,20 @@ MonoBehaviour:
   cutsAddedGeom: 1
   updateRotationDistance: 10
   useRotationAndScale: 1
+--- !u!114 &-4912378688970607453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146528840845912335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38bffeba856a428418f2ed15453b441a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enterence: {fileID: 3816679460954026575}
+  buildingItem: {fileID: 0}
+  people: []
+  maxPeople: 5
+  priceMultiplier: 1
