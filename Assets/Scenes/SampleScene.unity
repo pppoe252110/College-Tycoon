@@ -3556,9 +3556,9 @@ MonoBehaviour:
     _AreaColors:
     - {r: 0, g: 0, b: 0, a: 0}
   tagNames: []
-  heuristic: 2
+  heuristic: 1
   heuristicScale: 1
-  threadCount: -1
+  threadCount: -2
   maxFrameTime: 10
   batchGraphUpdates: 0
   graphUpdateBatchingInterval: 0.2
@@ -3567,7 +3567,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 1
+  showGraphs: 0
 --- !u!1 &1488879471
 GameObject:
   m_ObjectHideFlags: 0

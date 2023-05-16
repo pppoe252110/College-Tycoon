@@ -14,7 +14,7 @@ public class ColledgeBuilding : Building
     {
         for (int i = 0; i < people.Count; i++)
         {
-            IdentityManager.Instance.money += 10f * priceMultiplier;
+            IdentityManager.Instance.money += 20f * priceMultiplier;
         }
         base.ReleasePeople();
     }
